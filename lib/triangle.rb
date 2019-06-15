@@ -6,8 +6,11 @@ class Triangle
   end
   
   def kind 
-    if side_one == side_two && side_two == side_three
+    if (@side_one == @side_two) && (@side_two == @side_three)
       return :equilateral
-      elsif 
+      elsif (@side_one == @side_two) || (@side_two == @side_three) || (@side_one == @side_three)
+      return :isosceles
+    elsif (@side_one != @side_two) && (@side_two != @side_three) && (@side_one != @side_three)
+      return :scalene
   end
 end
