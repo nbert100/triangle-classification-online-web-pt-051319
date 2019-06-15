@@ -6,7 +6,10 @@ class Triangle
   end
   
   def kind 
-    if side
+    if (@side_two || @side_one || @side_three) <= 0 
+      raise TriangleError
+    elsif (@side_one + @side_two) < @side_three || (@side_one + @side_three) < @side_two || (@side_two + @side_three) < @side_one
+    raise TriangleError
     
     if (@side_one == @side_two) && (@side_two == @side_three)
       return :equilateral
@@ -15,5 +18,7 @@ class Triangle
     elsif (@side_one != @side_two) && (@side_two != @side_three) && (@side_one != @side_three)
       return :scalene
     end
+  
+  class TriangleError < StandardError
   end
 end
