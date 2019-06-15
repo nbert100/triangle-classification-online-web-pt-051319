@@ -11,9 +11,8 @@ class Triangle
       raise TriangleError
     elsif (@side_one + @side_two) <= @side_three || (@side_one + @side_three) <= @side_two || (@side_two + @side_three) <= @side_one
     raise TriangleError
-  end
-   else 
-    if (@side_one == @side_two) && (@side_two == @side_three)
+    
+    elsif (@side_one == @side_two) && (@side_two == @side_three)
       return :equilateral
       elsif (@side_one == @side_two) || (@side_two == @side_three) || (@side_one == @side_three)
       return :isosceles
